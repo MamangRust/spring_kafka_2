@@ -8,7 +8,7 @@ services:
     environment:
       - KRAFT_CONTAINER_HOST_NAME=broker
   order-service:
-    image: spring_kafka_2/order-service:1.0-SNAPSHOT
+    image: 91201210/order-service:latest
     ports:
       - "8080"
     links:
@@ -16,13 +16,13 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: docker
   payment-service:
-    image: spring_kafka_2/payment-service:1.0-SNAPSHOT
+    image: 91201210/payment-service:latest
     links:
       - broker
     environment:
       SPRING_PROFILES_ACTIVE: docker
   stock-service:
-    image: spring_kafka_2/stock-service:1.0-SNAPSHOT
+    image: 91201210/stock-service:latest
     links:
       - broker
     environment:
